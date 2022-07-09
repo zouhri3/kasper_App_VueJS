@@ -1,0 +1,52 @@
+.contact {
+  .contact-box {
+    @extend %grid;
+    margin-top: var(--p-normal);
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    form {
+      width: calc(100% - 350px);
+      min-width: 350px;
+      flex: 1;
+      input,
+      textarea {
+        display: block;
+        padding: 10px 15px;
+        width: 100%;
+      }
+      input {
+        &:not(:last-of-type) {
+          margin-bottom: 30px;
+        }
+      }
+      textarea {
+        resize: none;
+        margin-bottom: 30px;
+      }
+    }
+    address {
+      @extend %grid;
+      align-items: flex-start;
+      align-self: stretch;
+      flex-wrap: wrap;
+      line-height: 1.7;
+      width: 350px;
+      gap: 30px;
+      justify-content: space-between;
+      h3 {
+        margin-top: 0;
+        @extend %black;
+      }
+      p {
+        @extend %main2;
+        word-spacing: 3px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .contact .contact-box address {
+    width: 100% !important;
+  }
+}

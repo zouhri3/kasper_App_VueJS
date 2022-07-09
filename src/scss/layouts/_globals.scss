@@ -1,0 +1,69 @@
+/* ============================ start globals ============================*/
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small screen */
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium screen*/
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* larg screen */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+p {
+  color: rgba(0, 0, 0, 0.713);
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================ start globals ============================*/
+/* ============================ start animation slide ============================*/
+@keyframes slideِContent {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* ============================ start animation slide ============================*/
+
+

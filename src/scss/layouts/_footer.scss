@@ -1,0 +1,55 @@
+.footer {
+  margin-top: var(--p-top);
+  background-color: var(--black);
+  .overlay {
+    padding-top: var(--p-top);
+    background-color: rgba(0, 0, 0, 0.75);
+    .container {
+      @extend %grid;
+      flex-direction: column;
+      img {
+        width: 150px;
+        object-fit: cover;
+      }
+      .desc-icon {
+        @extend %white;
+        @extend %t-u;
+        padding: 15px 20px;
+        width: fit-content;
+        border-bottom: 2px solid var(--main2);
+      }
+      .icon-social {
+        i {
+          @extend %main1;
+          @extend %cursor;
+          @extend %tra1;
+          font-size: 17px;
+          text-align: center;
+          margin: 0 10px;
+          width: 30px;
+          height: 30px;
+          line-height: 29px;
+          border: 1px solid var(--main1);
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          &:hover {
+            @extend %white;
+            background-color: var(--main1);
+          }
+        }
+      }
+      .copyright {
+        @extend %t-c;
+        @extend %white;
+        padding-top: var(--p-normal);
+        padding-bottom: 20px;
+        span {
+          @extend %main1;
+        }
+      }
+    }
+  }
+}

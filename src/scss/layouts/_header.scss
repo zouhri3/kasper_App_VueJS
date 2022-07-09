@@ -1,0 +1,139 @@
+/* ============================ start header ============================*/
+
+header {
+  @extend %p-a;
+  width: 100%;
+  z-index: 99;
+  background-color: black;
+  .container {
+    @extend %grid;
+    @extend %p-r;
+    justify-content: space-between;
+    &::after {
+      content: "";
+      @extend %p-a;
+      height: 1px;
+      bottom: 0px;
+      left: 15px;
+      right: 15px;
+      width: calc(100% - 30px);
+      background-color: var(--main1);
+    }
+    .logo {
+      @extend %white;
+    }
+    #nav {
+      a {
+        @extend %white;
+        @extend %t-u;
+        display: inline-block;
+        padding: 40px 10px;
+        font-weight: bold;
+        text-decoration: none;
+        &.router-link-exact-active {
+          @extend %main1;
+        }
+      }
+    }
+    .search {
+      @extend %white;
+      @extend %p-r;
+      &:hover {
+        label {
+          @extend %main2;
+          @extend %tra1;
+        }
+        #search {
+          background-color: var(--white);
+          width: 150px;
+          @extend %tra1;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+          border-left: none !important;
+        }
+      }
+      label {
+        @extend %tra1;
+        @extend %white;
+        @extend %cursor;
+        position: absolute;
+        right: 7px;
+        font-size: 17px;
+        line-height: 30px;
+      }
+      #search {
+        display: block;
+        @extend%tra1;
+        width: 20px;
+        padding: 5px 35px 5px 10px;
+        height: 30px;
+        background-color: transparent;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        border-left: 3px solid var(--main1) !important;
+        @extend %main1;
+        &::placeholder {
+          @extend %main1;
+        }
+        &:focus {
+          outline: none !important;
+          border: none;
+        }
+      }
+    }
+    .bars {
+      display: none;
+      i {
+        font-size: 30px;
+        @extend %main1;
+      }
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  header {
+    background-color: rgba(0, 0, 0, 0.75);
+    .container {
+      #nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: calc(100%);
+        padding: 15px;
+
+        height: 300px;
+        transition: all 0.5s linear;
+        -webkit-transition: all 0.5s linear;
+        -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+        -o-transition: all 0.5s linear;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.75);
+        a {
+          display: block;
+          padding: 15px 0;
+        }
+        &.hide {
+          padding-top: 0;
+          padding-bottom: 0;
+          height: 0;
+          transition: all 0.5s linear;
+          -webkit-transition: all 0.5s linear;
+          -moz-transition: all 0.5s linear;
+          -ms-transition: all 0.5s linear;
+          -o-transition: all 0.5s linear;
+        }
+      }
+      .bars {
+        display: block;
+        padding: 40px 0 !important;
+      }
+    }
+  }
+}
+/*============================ end header ============================ */

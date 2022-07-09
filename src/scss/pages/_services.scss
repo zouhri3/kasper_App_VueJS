@@ -1,0 +1,145 @@
+.services {
+  .services-carts {
+    @extend %grid;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: var(--p-normal);
+    margin-top: var(--p-normal);
+    justify-content: center;
+    .cart-box {
+      @extend %grid;
+      width: calc(96% / 2);
+      border: 1px solid var(--main2);
+      padding: 20px;
+      border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      -ms-border-radius: 25px;
+      -o-border-radius: 25px;
+      align-self: stretch;
+      .content {
+        text-align: center;
+        margin-top: 5px;
+        margin-right: 25px;
+        padding: 10px;
+        width: 100%;
+        border-right: 1px solid var(--main1);
+        i {
+          @extend %main1;
+          font-size: 30px;
+        }
+        h3 {
+          @extend %t-c;
+          @extend %black;
+        }
+      }
+      p {
+        letter-spacing: 0.5px;
+        text-align: justify;
+      }
+    }
+  }
+  .our-services {
+    background-image: url("./../assets/serves-bc.png");
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: var(--p-top);
+    .overlay {
+      min-height: 70vh;
+      background-color: rgba(0, 0, 0, 0.75);
+      @extend %grid;
+      gap: 40px;
+      .img-box {
+        width: 400px;
+        height: 400px;
+        img {
+          margin: 60px 30px 0 100px;
+          @extend %p-r;
+        }
+      }
+      .our-design {
+        @extend %p-r;
+        width: 50%;
+        padding: 40px 30px;
+        margin: 70px 0;
+        margin-left: auto;
+        &::before {
+          @extend %p-a;
+          content: "";
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: rgba(#19c8fa, 0.5);
+          border-radius: 4px 0 0 4px;
+        }
+        h3 {
+          @extend %black;
+          @extend %p-r;
+          @extend %t-c;
+          font-size: 30px;
+        }
+        .our-design-box {
+          @extend %p-r;
+          @extend %grid;
+          i {
+            @extend %white;
+            font-size: 20px;
+          }
+          h4 {
+            @extend %white;
+            @extend %t-c;
+            flex-grow: 1;
+            margin: 10px 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .services {
+    .services-carts {
+      .cart-box {
+        width: 100%;
+      }
+    }
+    .our-services {
+      .overlay {
+        .our-design {
+          width: 100%;
+
+          &::before {
+            background-color: transparent;
+          }
+          h3 {
+            color: var(--main1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .services {
+    .services-carts {
+      .cart-box {
+        flex-wrap: wrap;
+        .content {
+          margin-right: 0;
+          border-right: none;
+        }
+      }
+    }
+    .our-services {
+      .overlay {
+        flex-wrap: wrap;
+        .img-box {
+          display: none;
+        }
+      }
+    }
+  }
+}

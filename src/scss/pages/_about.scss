@@ -1,0 +1,259 @@
+.about {
+  .container.container-box-img {
+    @extend %grid;
+    justify-content: center;
+    .box-img {
+      max-width: 100%;
+      margin-top: var(--p-normal);
+
+      img {
+        @extend %p-r;
+        top: 65px;
+        margin-top: -65px;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+  }
+  .statistics {
+    background-attachment: fixed;
+    background-image: url("../assets/statistic-bc.jpg");
+    background-size: cover;
+    .overlay {
+      padding: var(--p-top) 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      .container {
+        @extend %grid;
+        flex-wrap: wrap;
+        background-color: rgba(#19c8fa, 0.5);
+        .statis-box {
+          @extend %white;
+          width: calc(100% / 4);
+          text-align: center;
+          padding-top: var(--p-normal);
+          padding-bottom: var(--p-normal);
+          i {
+            @extend %black;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 10px;
+            width: 60px;
+            height: 60px;
+            line-height: 59px;
+            border: 1px solid var(--white);
+            border-radius: 50%;
+            background-color: var(--white);
+          }
+          p {
+            font-size: 35px;
+            font-weight: bold;
+            @extend %white;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          h3 {
+            font-weight: 100;
+            font-size: 16px;
+            @extend %white;
+          }
+        }
+      }
+    }
+  }
+  .testimonials-skills {
+    padding: calc(var(--p-top) / 1.5) 0;
+    .container {
+      @extend %grid;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .testimonials,
+      .skills {
+        width: calc(90% / 2);
+        h3 {
+          @extend %t-u;
+          text-align: center;
+        }
+        & > p {
+          @extend %main2;
+          text-align: center;
+          line-height: 1.7;
+          font-size: 0.9rem;
+          padding: 15px;
+        }
+      }
+      .testimonials {
+        .testimonials-box {
+          .content {
+            animation: slideِContent 0.2s;
+            &:first-child {
+              margin-bottom: 15px;
+            }
+            @extend %grid;
+            justify-content: stretch;
+            gap: 30px;
+            .img-box {
+              img {
+                width: 100px;
+                height: 100px;
+                -o-object-fit: cover;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+            }
+            .content-box {
+              p {
+                line-height: 1.7;
+                text-align: left;
+                border-bottom: 1px solid var(--main2);
+                span {
+                  @extend%main2;
+                  text-align: right;
+                  display: block;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+        .list-items {
+          position: relative;
+          text-align: center;
+          bottom: 0;
+        }
+      }
+      .skills {
+        .progres {
+          h4 {
+            @extend%black;
+            @extend%t-u;
+            margin-bottom: 10px;
+          }
+          .progres-box {
+            background-color: var(--main2);
+            height: 23px;
+            width: 100%;
+            span {
+              @extend%p-r;
+              background-color: var(--main1);
+              display: block;
+              height: 23px;
+              &::before,
+              &::after {
+                @extend%p-a;
+                right: 0;
+              }
+              &::after {
+                @extend%white;
+                content: attr(data-progres);
+                padding: 4px;
+                font-size: 0.8rem;
+                font-weight: 700;
+                top: -125%;
+                transform: translateX(50%);
+                background-color: var(--black);
+              }
+              &::before {
+                content: " ";
+                border-width: 8px;
+                border-style: solid;
+                border-color: black transparent transparent;
+                transform: translate(50%, -50%);
+                -webkit-transform: translate(50%, -50%);
+                -moz-transform: translate(50%, -50%);
+                -ms-transform: translate(50%, -50%);
+                -o-transform: translate(50%, -50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .client-say {
+    .container {
+      @extend %p-r;
+      i {
+        font-size: 12px;
+        @extend %main2;
+      }
+      blockquote {
+        @extend %main1;
+        border: 1px solid var(--main2) !important;
+        padding: 40px;
+        font-size: 25px;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        font-style: italic;
+        text-align: center;
+      }
+      p {
+        @extend%p-a;
+        @extend%t-c;
+        @extend%white;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        background: var(--black);
+        padding: 12px 25px;
+        bottom: -35px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .testimonials {
+    .testimonials-box {
+      &:first-child {
+        margin-bottom: 30px;
+      }
+      .content {
+        flex-direction: column;
+        gap: 0 !important;
+        p {
+          text-align: center !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .about {
+    .statistics {
+      .overlay {
+        padding: 0;
+        .container {
+          .statis-box {
+            min-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 970px) {
+  .about {
+    .statistics {
+      .overlay {
+        .container {
+          .statis-box {
+            width: calc(100% / 2);
+          }
+        }
+      }
+    }
+    .testimonials-skills {
+      .container {
+        .testimonials,
+        .skills {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.pricing {
+  .pricing-section {
+    @extend %grid;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: var(--p-normal);
+
+    .pricing-box {
+      @extend %black;
+      width: calc(90% / 4);
+      background-color: #eeeeee;
+      text-align: center;
+      .pricing-head {
+        padding: 15px;
+        border-top: 1px solid var(--main1);
+        border-bottom: 1px solid var(--main1);
+        h3 {
+          @extend %t-u;
+        }
+        p {
+          font-weight: bold;
+          font-size: 60px;
+          margin: 0;
+          sup,
+          span {
+            font-size: 1rem;
+          }
+          sup {
+            top: -30px;
+          }
+        }
+      }
+      .option-pricing {
+        list-style: none;
+        border-bottom: 1px solid var(--main1);
+        padding: 0;
+        margin: 0;
+        li {
+          padding: 25px 0;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+          &:not(:last-of-type()) {
+            border-bottom: 1px solid var(--main1);
+          }
+        }
+      }
+      button {
+        @extend%t-c;
+        @extend%tra1;
+        @extend%cursor;
+        @extend%main1;
+        background-color: var(--white);
+        margin: 25px 0;
+        padding: 10px 25px;
+        border: 1px solid var(--main1);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        &:hover {
+          @extend%white;
+          background-color: var(--main1);
+        }
+      }
+    }
+  }
+  .subscribe {
+    margin-top: var(--p-top);
+    @extend%grid;
+    @extend%black;
+    border: 1px solid var(--main2) !important;
+    padding: 40px;
+    flex-wrap: wrap;
+    form {
+      @extend%p-r;
+      border: 1px solid var(--main2);
+      @extend%grid;
+      i {
+        @extend%main1;
+        font-size: 20px;
+        padding: 5px 0 5px 5px;
+      }
+      input {
+        @extend%main1;
+        border: none;
+        outline: none;
+        padding: 10px;
+      }
+      input[type="email"] {
+        flex-grow: 1;
+      }
+      input[type="submit"] {
+        @extend%white;
+        @extend%cursor;
+        width: 175px;
+        background-color: var(--main1);
+      }
+    }
+    p {
+      width: 55%;
+      font-style: italic;
+      line-height: 1.7;
+      letter-spacing: 1px;
+      padding-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing {
+    .pricing-section {
+      .pricing-box {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .pricing {
+    .pricing-section {
+      .pricing-box {
+        width: calc(95% / 2);
+      }
+    }
+    .subscribe {
+      form,
+      p {
+        width: 100%;
+      }
+      p {
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.heading-section {
+  @extend %p-t-s;
+  @extend %grid;
+  flex-direction: column;
+  h2 {
+    @extend%t-u;
+    @extend%p-r;
+    @extend%black;
+    width: max-content;
+    padding: 10px 0;
+    animation: borderChange 5s infinite linear;
+    -webkit-animation: borderChange 5s infinite linear;
+    &::after {
+      content: "";
+      @extend %p-a;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: var(--main2);
+    }
+    &::before {
+      content: "";
+      @extend%p-a;
+      width: 10px;
+      left: calc(50% - 5px);
+      bottom: -5px;
+      height: 10px;
+      background-color: var(--white);
+      border: 1px solid var(--main1);
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      z-index: 1;
+      animation: move 5s infinite linear;
+      -webkit-animation: move 5s infinite linear;
+    }
+  }
+  p {
+    @extend%t-c;
+    @extend%main2;
+    width: 60%;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading-section {
+    p {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    left: calc(50% - 5px);
+  }
+  25% {
+    left: 0;
+  }
+  50% {
+    left: calc(50% - 5px);
+  }
+  75% {
+    left: calc(100% - 10px);
+  }
+  100% {
+    left: calc(50% - 5px);
+  }
+}
+
+@keyframes borderChange {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-8deg);
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+  75% {
+    transform: rotate(8deg);
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+}

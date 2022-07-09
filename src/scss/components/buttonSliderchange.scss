@@ -1,0 +1,33 @@
+  .list-items {
+      @extend%p-a;
+      bottom: 10px;
+      left: 50%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      li {
+          @extend %cursor;
+          @extend %tra1;
+          width: 25px;
+          height: 6px;
+          border: 1px solid var(--main1);
+          border-radius: 50%;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          display: inline-block;
+          margin: 5px;
+          &.active,
+          &:hover {
+              @extend %tra1;
+              @extend %cursor;
+              background-color: var(--main1)
+          }
+      }
+  }

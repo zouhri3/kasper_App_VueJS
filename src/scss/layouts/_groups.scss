@@ -1,0 +1,59 @@
+/* ============================ start groups ============================*/
+
+// grid
+%grid {
+  display: flex;
+  align-items: center;
+}
+
+// color
+%white {
+  color: var(--white);
+}
+
+%black {
+  color: var(--black);
+}
+
+%main1 {
+  color: var(--main1);
+}
+
+%main2 {
+  color: var(--main2);
+}
+
+// position
+%p-a {
+  position: absolute;
+}
+
+%p-r {
+  position: relative;
+}
+
+// transition
+%tra1 {
+  transition: all 0.2s linear;
+}
+
+// cursor
+%cursor {
+  cursor: pointer;
+}
+
+// text - transform
+%t-u {
+  text-transform: uppercase;
+}
+
+%t-c {
+  text-transform: capitalize;
+}
+
+// padding
+%p-t-s {
+  padding-top: 120px;
+}
+
+/* ============================ end groups ============================*/
